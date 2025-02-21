@@ -25,19 +25,19 @@ app.use(express.json());
 // app.use(cors()); // No permitiría el envío de cookies
 
 // Configurar CORS para admitir el origen del frontend en desarrollo
-app.use(
-  cors({
-    origin: "http://localhost:5173", // Permitir el frontend en desarrollo
-    credentials: true, // Permitir envío de cookies
-  })
-);
-// Habilitar el análisis de cookies
-app.use(cookieParser());
+// app.use(
+//   cors({
+//     origin: "http://localhost:5173", // Permitir el frontend en desarrollo
+//     credentials: true, // Permitir envío de cookies
+//   })
+// );
+// // Habilitar el análisis de cookies
+// app.use(cookieParser());
 
 // Configurar rutas de la API Rest
 app.use("/api/proyectos", proyectoRoutes);
 app.use("/api/tareas", tareaRoutes);
-app.use("/api/users", userRoutes);
+// app.use("/api/users", userRoutes);
 
 // Configurar el middleware para servir archivos estáticos desde el directorio 'public\old_js_vainilla'
 app.use(express.static(path.join(__dirname, "public")));
